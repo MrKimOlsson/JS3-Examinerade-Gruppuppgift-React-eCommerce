@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import ShopLayout from './layouts/ShopLayout'
 import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
-import Navbar from './components/navbar/Navbar'
+// import Navbar from './components/navbar/Navbar'
 
 
 const App = () => {
