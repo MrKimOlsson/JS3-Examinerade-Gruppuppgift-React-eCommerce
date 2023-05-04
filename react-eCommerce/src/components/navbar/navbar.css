@@ -1,0 +1,38 @@
+.navbar {
+    height: 10.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+}
+
+.logo img{
+    width: 8rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar ul li {
+    font-size: .7rem;
+    text-transform: uppercase;
+}
+
+.navbar ul li.lowercase {
+    text-transform: capitalize;
+    opacity: .5;
+}
+
+.navbar ul li:nth-of-type(4),
+.navbar ul li:nth-of-type(6) {
+    opacity: .5;
+}
+
+.navbar ul li:nth-of-type(6) {
+    font-size: .9rem;
+    opacity: .3;
+}
