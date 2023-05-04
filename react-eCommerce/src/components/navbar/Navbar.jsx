@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../logo/logo.svg'
 import './navbar.css'
 import {FiSearch} from 'react-icons/fi'
@@ -10,15 +11,15 @@ const Navbar = () => {
     <>
       <nav className='navbar'>
         <div className="logo">
-          <img src={Logo} alt="" />
+          <Link to='/' ><img src={Logo} alt="" /></Link>
         </div>
         <ul>
-          <li>Home</li>
-          <li>Products</li>
-          <li>Contacts</li>
-          <li><FiSearch /></li>
-          <li className='lowercase'>Login</li>
-          <li><FaShoppingCart /></li>
+          <li><NavLink className='nav-link' to='/'>Home</NavLink></li>
+          <li><NavLink className='nav-link' to='/products'>Products</NavLink></li>
+          <li><NavLink className='nav-link' to='/contact'>Contact</NavLink></li>
+          <li><FiSearch className='opacity height'/></li>
+          <li><NavLink className='nav-link lowercase opacity' to='/login'>Login</NavLink></li>
+          <li><NavLink className='nav-link ' to='/cart'><FaShoppingCart className='cart'/></NavLink></li>
         </ul>
       </nav>
     </>
@@ -26,3 +27,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
