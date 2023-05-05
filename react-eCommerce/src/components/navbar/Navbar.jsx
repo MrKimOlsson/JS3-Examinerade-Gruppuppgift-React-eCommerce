@@ -15,6 +15,7 @@ const Navbar = () => {
         </div>
         <ul>
           <li><NavLink className='nav-link' to='/'>Home</NavLink></li>
+          <li><NavLink className='nav-link' to='/productDetails'>Details</NavLink></li>
           <li><NavLink className='nav-link' to='/shop'>Products</NavLink></li>
           <li><NavLink className='nav-link' to='/contact'>Contact</NavLink></li>
           <li><FiSearch className='opacity height'/></li>

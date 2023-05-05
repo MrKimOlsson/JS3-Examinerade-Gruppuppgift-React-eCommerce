@@ -13,7 +13,7 @@ const actionData = useActionData()
             
             <div>
                 <Form metod='POST'>
-                    <input type='text' name='email' id="email" placeholder='Enter your email here'/>
+                    <input className='subscribeEmailInput' type='text' name='email' id="email" placeholder='Enter your email here'/>
                     <button className='btn-subscribe'>SUBSCIRIBE FOR NEWSLETTER</button>
                     {actionData && <p className='error'>{actionData.message}</p>}
                 </Form>

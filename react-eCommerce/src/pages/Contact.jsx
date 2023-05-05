@@ -1,13 +1,13 @@
 import React from 'react'
 import ContactForm from '../components/contact/contactform/contactForm'
-import Contacthero from '../components/contact/contacthero/Contacthero'
+import WideHero from '../components/hero/WideHero'
 import Contactmap from '../components/contact/contactmap/Contactmap'
 
 
 function Contact() {
   return (
     <>
-    <Contacthero />
+    <WideHero />
     <ContactForm />
     <Contactmap />
     </>

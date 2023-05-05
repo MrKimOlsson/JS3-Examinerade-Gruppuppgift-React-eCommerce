@@ -3,7 +3,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 3rem;   
+    padding-bottom: 1rem;   
 }
 
 .grid-container{
@@ -12,4 +12,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+    /* row-gap:7rem; */
+    /* margin-bottom: 5rem; */
+}
+
+.product-container {
+    margin-bottom: 2rem;
+}
+
+.grid-text {
+    line-height: 2rem;
 }

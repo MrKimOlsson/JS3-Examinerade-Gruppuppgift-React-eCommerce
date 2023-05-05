@@ -1,4 +1,4 @@
-.form {
+.contactForm {
     display: grid;
     justify-content: space-around;
     /* border: 1px blue solid; */
@@ -43,3 +43,7 @@
 .radiobtn {
     height: 3rem;
 }
+
+/* .formContainer {
+    width: 80vw;
+} */
