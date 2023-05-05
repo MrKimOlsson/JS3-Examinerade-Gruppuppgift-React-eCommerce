@@ -50,7 +50,12 @@ const App = () => {
               // loader: DetailsLoader        ((insert later.))
             }
           ]
-        }
+        },
+        {
+          path: 'productDetails',
+          element: <ProductDetails />
+        },
+
       ]
     }
   ])
