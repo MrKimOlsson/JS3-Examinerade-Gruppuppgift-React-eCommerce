@@ -5,7 +5,6 @@ function Shop() {
   return (
     <>
 
-    <Footer />
     </>
   )
 }

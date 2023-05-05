@@ -18,7 +18,7 @@ const Home = () => {
       <SpecialOffers />
       <ProductCarousell />
       <AdminPost/>
-      <Footer />
+      
     </>
   )
 }

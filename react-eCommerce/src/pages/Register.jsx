@@ -4,7 +4,7 @@ import Footer from '../components/footer/Footer'
 const Register = () => {
   return (
     <>
-    <Footer />
+
     </>
   )
 }

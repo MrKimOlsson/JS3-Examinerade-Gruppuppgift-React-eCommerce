@@ -1,4 +1,5 @@
 import React from 'react'
+import './adminPostBtn.css'
 
 const AdminPostBtn = () => {
   return (
