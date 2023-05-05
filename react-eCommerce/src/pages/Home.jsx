@@ -7,6 +7,7 @@ import Footer from '../components/footer/Footer'
 import SpecialOffers from '../components/specialOffers/SpecialOffers'
 import ProductCarousell from '../components/productCarousell/ProductCarousell'
 import AdminPost from '../components/adminPost/AdminPost'
+import NewsletterSub from '../components/newsletter/NewsletterSub'
 
 const Home = () => {
   return (
@@ -17,7 +18,8 @@ const Home = () => {
       <GridButton />
       <SpecialOffers />
       <ProductCarousell />
-      <AdminPost/>
+      <AdminPost />
+      <NewsletterSub />
       
     </>
   )
