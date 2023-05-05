@@ -4,6 +4,7 @@ import Hero from '../components/hero/Hero'
 import GridMenu from '../components/grid/gridMenu/GridMenu'
 import Grid from '../components/grid/Grid'
 import GridButton from '../components/grid/gridButton/GridButton'
+import Footer from '../components/footer/Footer'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <GridMenu />
       <Grid />
       <GridButton />
+      <Footer />
     </>
   )
 }
