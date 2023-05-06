@@ -1,13 +1,12 @@
 import React from 'react'
-import Hero from '../components/hero/Hero'
-import GridMenu from '../components/grid/gridMenu/GridMenu'
-import Grid from '../components/grid/Grid'
-import GridButton from '../components/grid/gridButton/GridButton'
-import Footer from '../components/footer/Footer'
-import SpecialOffers from '../components/specialOffers/SpecialOffers'
-import ProductCarousell from '../components/productCarousell/ProductCarousell'
-import AdminPost from '../components/adminPost/AdminPost'
-import NewsletterSub from '../components/newsletter/NewsletterSub'
+import Hero from '../components/home/hero/Hero'
+import GridMenu from '../components/products/productGrid/gridMenu/GridMenu'
+import Grid from '../components/products/productGrid/Grid'
+import GridButton from '../components/products/productGrid/gridButton/GridButton'
+import SpecialOffers from '../components/products/specialOffers/SpecialOffers'
+import ProductCarousell from '../components/home/productCarousell/ProductCarousell'
+import AdminPost from '../components/home/adminPosts/AdminPost'
+import NewsletterSub from '../components/home/newsletter/NewsletterSub'
 
 const Home = () => {
   return (

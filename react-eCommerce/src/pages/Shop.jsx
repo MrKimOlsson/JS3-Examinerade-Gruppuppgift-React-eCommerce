@@ -1,10 +1,8 @@
 import React from 'react'
-import Grid from '../components/grid/Grid'
-import Footer from '../components/footer/Footer'
-import GridMenu from '../components/grid/gridMenu/GridMenu'
-// import ProductsHero from '../components/products/productsHero/ProductsHero'
-import WideHero from '../components/hero/WideHero'
-import SpecialOffersWide from '../components/specialOffersWide/SpecialOffersWide'
+import Grid from '../components/products/productGrid/Grid'
+import GridMenu from '../components/products/productGrid/gridMenu/GridMenu'
+import WideHero from '../components/universal/wideHero/WideHero'
+import SpecialOffersWide from '../components/products/specialOffersWide/SpecialOffersWide'
 
 
 function Shop() {
