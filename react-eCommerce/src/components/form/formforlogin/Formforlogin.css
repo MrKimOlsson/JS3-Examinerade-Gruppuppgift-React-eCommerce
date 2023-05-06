@@ -1,7 +1,6 @@
 .form-login-wrapper {
   box-sizing: border-box;
   padding-left: 20rem;
-  border: 1px solid black;
   padding-top: 20rem;
   color: rgb(99, 99, 99);
 }
@@ -48,11 +47,15 @@
   border: 0;
   font-size: 1.5rem;
   padding-left: 10px;
-  background-color: rgb(247, 246, 246);
+  background-color: #fafafa;
 }
 
 .form-label-link-two {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.login-checkbox {
+  margin-top: .5rem;
 }

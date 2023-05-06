@@ -1,10 +1,10 @@
 import React from 'react'
-import Footer from '../components/footer/Footer'
+import Formforregister from '../components/form/registerform/Formforregister'
 
 const Register = () => {
   return (
     <>
-
+      <Formforregister />
     </>
   )
 }

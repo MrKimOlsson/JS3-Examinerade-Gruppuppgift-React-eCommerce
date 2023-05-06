@@ -8,6 +8,7 @@ import ProductDetails from './pages/ProductDetails'
 import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
+import Register from './pages/Register'
 
 
 const App = () => {
@@ -30,6 +31,11 @@ const App = () => {
           path: 'login',
           element: <Login />
         },
+        {
+          path: 'register',
+          element: <Register />
+        },
+
         {
           path: 'cart',
           element: <Cart />
@@ -62,7 +68,7 @@ const App = () => {
 
   return (
     <>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
   )
 }
