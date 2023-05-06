@@ -1,6 +1,6 @@
 import React from 'react'
 import './hero.css'
-import HeroProduct from '../../images/625x647.svg'
+import HeroProduct from '../../../images/625x647.svg'
 
 const Hero = () => {
   return (

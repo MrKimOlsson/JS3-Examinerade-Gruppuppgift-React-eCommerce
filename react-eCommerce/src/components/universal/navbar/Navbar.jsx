@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import Logo from '../../logo/logo.svg'
+import Logo from '../../../logo/logo.svg'
 import './navbar.css'
 import {FiSearch} from 'react-icons/fi'
 import {FaShoppingCart} from 'react-icons/fa'

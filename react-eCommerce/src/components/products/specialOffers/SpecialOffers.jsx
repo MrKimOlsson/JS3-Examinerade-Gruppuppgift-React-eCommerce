@@ -1,6 +1,6 @@
 import React from 'react'
 import './specialOffers.css'
-import SpecialOffersImage from '../../images/369x310.svg'
+import SpecialOffersImage from '../../../images/369x310.svg'
 import { MdOutlineAddShoppingCart } from 'react-icons/Md'
 
 const SpecialOffers = () => {

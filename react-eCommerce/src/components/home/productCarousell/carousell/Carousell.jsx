@@ -1,6 +1,6 @@
 import React from 'react'
 import './carousell.css'
-import CarousellProductImage from '../../../images/270x295.svg'
+import CarousellProductImage from '../../../../images//270x295.svg'
 import { MdOutlineAddShoppingCart } from 'react-icons/Md'
 
 const Carousell = () => {

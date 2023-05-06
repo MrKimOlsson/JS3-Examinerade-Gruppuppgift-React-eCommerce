@@ -1,6 +1,6 @@
 import React from 'react'
 import './post.css'
-import PostImage from '../../../images/370x295.svg'
+import PostImage from '../../../../images/370x295.svg'
 const Post = () => {
   return (
     <div className='post-wrapper'>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, useActionData } from 'react-router-dom'
-import { newsletterSub } from '../../helpers/apiService'
+import { newsletterSub } from '../../../helpers/apiService'
 import './newsletterSub.css'
 
 const NewsletterSub = () => {
