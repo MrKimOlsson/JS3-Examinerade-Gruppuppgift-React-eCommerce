@@ -15,24 +15,36 @@
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    align-items: center;
 }
 
-.navbar ul li {
+.navbar ul .nav-link {
     font-size: .7rem;
     text-transform: uppercase;
+    text-decoration: none;
+    color: black;
 }
 
-.navbar ul li.lowercase {
+.navbar ul li .lowercase {
     text-transform: capitalize;
     opacity: .5;
 }
-
-.navbar ul li:nth-of-type(4),
-.navbar ul li:nth-of-type(6) {
-    opacity: .5;
+.cart {
+    font-size: .9rem;
+    opacity: .3;
 }
 
-.navbar ul li:nth-of-type(6) {
-    font-size: .9rem;
+.opacity {
+    opacity: .2;
+}
+
+.navbar ul li {
+    display: flex;
+    align-items: center;
+    
+}
+
+.height {
+    font-size: .8rem;
     opacity: .3;
 }
