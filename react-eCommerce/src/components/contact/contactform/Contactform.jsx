@@ -5,11 +5,10 @@ import FormBtn from '../formBtn/FormBtn'
 
 const contactForm = () => {
   return (
-  
-    <div className='formContainer'>
+  <div className="form">
 
       <div className="contactForm">
-        <Form method='POST'>
+        <Form method='POST' className='formParent'>
         <h4>Write Something</h4>
         <div className='line'></div>
           <div className="formWrapper">
@@ -40,8 +39,7 @@ const contactForm = () => {
         </Form>
         <FormBtn />
       </div>
-    </div>
-
+</div>
 
   )
 }
