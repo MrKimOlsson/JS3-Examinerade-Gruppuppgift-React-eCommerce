@@ -9,8 +9,8 @@ const contactForm = () => {
 
       <div className="contactForm">
         <Form method='POST' className='formParent'>
-        <p>Write Something</p>
-        <div className='line'></div>
+        <p className='contactFormHeading'>Write Something</p>
+        <div className='contactFormLine'></div>
           <div className="formWrapper">
             <div className="contactFormGroup">
               <label htmlFor="name">Your Name*</label>
