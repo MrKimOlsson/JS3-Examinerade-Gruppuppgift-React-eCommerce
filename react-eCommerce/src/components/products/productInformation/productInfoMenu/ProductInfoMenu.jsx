@@ -3,11 +3,13 @@ import './productInfoMenu.css'
 
 const ProductInfoMenu = () => {
   return (
-    <div className='product-info-menu'>
-        <button>DESCRIPTION</button>
-        <button>ADDITIONAL</button>
-        <button>DESCRIPTION</button>
-        <button>DESCRIPTION</button>
+    <div className='product-info-menu-wrapper'>
+      <div className='product-info-menu-container'>
+          <button>DESCRIPTION</button>
+          <button>ADDITIONAL INFO</button>
+          <button>REVIEWS {"(0)"}</button>
+          <button>SHIPPING & DELIVERY</button>
+      </div>
     </div>
 
   )
