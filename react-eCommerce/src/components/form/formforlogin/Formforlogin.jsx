@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react'
 import axios from 'axios';
 import './Formforlogin.css';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, NavLink } from 'react-router-dom';
 import Formbtn from './btnlogin/Formbtn';
 
 const Formforlogin = () => {
@@ -33,7 +33,7 @@ const Formforlogin = () => {
             <input type="email" name="email" id="email" className='input-login' value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="input-group-login d-flex-form">
-            <label htmlFor="password" className='form-label-link-two'>Password* <Link className='form-link-register-padding'>Forgot your password?</Link></label>
+            <label htmlFor="password" className='form-label-link-two'>Password* <Link to='/forgotpassword' className='form-link-register-padding'>Forgot your password?</Link></label>
             <input type="password" name="password" id="password" className='input-login' value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div>
