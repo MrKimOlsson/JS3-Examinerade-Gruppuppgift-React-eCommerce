@@ -1,9 +1,17 @@
 import React from 'react'
+import ContactForm from '../components/contact/contactform/contactForm'
+import WideHero from '../components/universal/wideHero/WideHero'
+import Contactmap from '../components/contact/contactmap/Contactmap'
+
 
 function Contact() {
   return (
-    <div>Contact</div>
-  )
+    <>
+    <WideHero />
+    <ContactForm />
+    <Contactmap />
+    </>
+    )
 }
 
 export default Contact

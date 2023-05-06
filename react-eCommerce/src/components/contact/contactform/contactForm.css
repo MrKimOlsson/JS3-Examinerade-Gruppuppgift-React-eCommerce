@@ -1,0 +1,57 @@
+
+.line {
+    background-color: rgb(196, 196, 196);
+    height: 1px;
+    width: 60px;
+    margin: .4rem 0 2rem 0;
+}
+
+.formWrapper {
+    /* border: 1px blue solid; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/* .formParent{
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    border: 2px solid black;
+} */
+.formGroup {
+    padding: .1em;
+    margin: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.wide input {
+    /* height: 12vh; */
+    border: none;
+    background-color: rgb(220, 220, 220);
+}
+.formGroup input {
+    border: none;
+    background-color: rgb(220, 220, 220);
+}
+.contactForm {
+    display: grid;
+    justify-content: center;
+    /* border: 1px green solid; */
+    padding: 1rem 20rem;
+    margin: 4rem;
+    max-width: 55vw;
+    min-width: 40vw;
+    letter-spacing: 0.01em;
+    box-shadow: 2px 2px 10px darkgrey;
+}
+/* parent för att centrera boxen på sidan */
+.form{
+    display: flex;
+    justify-content: center;
+}
+.formContainer {
+    width: 80vw;
+} 
+ /* radiobtn  */
+.radiobtn {
+    height: 3rem;
+} 

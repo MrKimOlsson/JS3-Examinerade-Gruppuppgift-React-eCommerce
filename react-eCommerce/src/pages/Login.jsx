@@ -1,8 +1,11 @@
 import React from 'react'
+import Formforlogin from '../components/form/formforlogin/Formforlogin'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <>
+      <Formforlogin />
+    </>
   )
 }
 

@@ -6,7 +6,6 @@ import ShopLayout from './layouts/ShopLayout'
 import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
 import Contact from './pages/Contact'
-// import Navbar from './components/navbar/Navbar'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 
@@ -51,7 +50,12 @@ const App = () => {
               // loader: DetailsLoader        ((insert later.))
             }
           ]
-        }
+        },
+        {
+          path: 'productDetails',
+          element: <ProductDetails />
+        },
+
       ]
     }
   ])
