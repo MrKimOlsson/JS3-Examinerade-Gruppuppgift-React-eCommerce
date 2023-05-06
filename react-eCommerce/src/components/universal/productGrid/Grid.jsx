@@ -1,6 +1,6 @@
 import React from 'react'
 import './grid.css'
-import ProductImage from '../../images/270x295.svg'
+import ProductImage from '../../../images/270x295.svg'
 
 const Grid = () => {
   return (

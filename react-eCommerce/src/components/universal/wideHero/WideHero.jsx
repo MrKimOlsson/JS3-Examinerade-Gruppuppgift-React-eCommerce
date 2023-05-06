@@ -1,6 +1,6 @@
 import React from 'react'
 import './wideHero.css'
-import ProductImage from '../../images/1920x300.svg'
+import ProductImage from '../../../images/1920x300.svg'
 
 const WideHero = () => {
   return (
