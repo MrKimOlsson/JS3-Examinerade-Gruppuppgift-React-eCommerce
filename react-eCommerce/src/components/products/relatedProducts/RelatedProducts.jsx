@@ -43,8 +43,6 @@ const RelatedProducts = () => {
                 </div>
             </div>   
 
-
-        
         </div>
         
     </div>
