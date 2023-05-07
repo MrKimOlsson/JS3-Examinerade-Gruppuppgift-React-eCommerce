@@ -7,7 +7,7 @@ import { useFetchMore } from "../../../hooks/useFetch"
 const Grid = () => {
   
   let amount = 8;
-  const [url, setUrl] = useState('http://localhost:9998/api/product')
+  const [url, setUrl] = useState('http://localhost:9999/api/product')
   const { data: products, loading, error } = useFetchMore(url, { method: 'GET' }, amount)
   console.log(products)
 
