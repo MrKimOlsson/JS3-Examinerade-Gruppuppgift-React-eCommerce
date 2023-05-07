@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { addProduct, getAllProducts, getProductById, deleteProduct } = require('../models/productModel')
+const { addProduct, getAllProducts, getProductById, updateProduct, deleteProduct } = require('../models/productModel')
 
 
 
@@ -12,7 +12,7 @@ router.get('/:id', getProductById)
 
 
 //UPDATE
-
+router.put('/:id', updateProduct)
 
 //DELETE
 router.delete('/:id', deleteProduct)
