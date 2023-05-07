@@ -1,75 +1,29 @@
 import React from 'react'
+import { useState } from 'react'
 import './grid.css'
-import ProductImage from '../../../images/270x295.svg'
+import ProductListItem from '../../productListItem.jsx/ProductListItem'
+import { useFetchMore } from "../../../hooks/useFetch"
 
 const Grid = () => {
+  
+  let amount = 8;
+  const [url, setUrl] = useState('http://localhost:9998/api/product')
+  const { data: products, loading, error } = useFetchMore(url, { method: 'GET' }, amount)
+  console.log(products)
+
   return (
+
     <div className='grid-component'>
-      <div className='grid-container'>
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
+        <div className='grid-container'>
 
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
+        { loading && <p>Loading...</p> }
+        { error && <p>{error}</p> }
 
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
-
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
-
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
-
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
-
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
-
-        <div className='product-container'>
-          <img src={ProductImage} alt="" />
-          <div className='grid-text'>
-            <p>Product title</p>
-            <p>price</p>
-          </div>
-        </div>
-      </div>    
+        { products && !loading && !error && products.map(product => (
+          <ProductListItem key={product._id} product={product} />
+        ))}
+        
+      </div>
     </div>
   )
 }

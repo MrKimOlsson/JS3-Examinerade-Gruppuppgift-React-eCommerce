@@ -1,5 +1,5 @@
 import { json, redirect } from "react-router-dom"
-// import { sleep } from "./sleep"
+
 
 export const newsletterSub = async (subscriberData, setSubscriber) => {
     try {
@@ -30,6 +30,16 @@ export const newsletterSub = async (subscriberData, setSubscriber) => {
     }
   }
   
+
+
+
+
+
+
+
+
+
+
 
 // export const createPost = async (post) => {
 //   await sleep(1000)
@@ -110,3 +120,35 @@ export const newsletterSub = async (subscriberData, setSubscriber) => {
 //     return json({ message: error.response.data })
 //   }
 // }
+
+// export const fetchProducts = (url) => {
+  
+  
+
+
+  // const getMoreProducts = async () => {
+  //   const res = await axios.get(url)
+
+  //   console.log(res.data)
+  //   // Limit the data to 16 products
+  //   const limitedData = res.data.slice(0, 16);
+  //   setProducts(limitedData)
+  // }
+
+//   useEffect(() => {
+
+//     const getProducts = async () => {
+//       const res = await axios.get('http://localhost:9998/api/product')
+  
+//       console.log(res.data)
+//       // Limit the data to 8 products
+//       const limitedData = res.data.slice(0, 8);
+//       setProducts(limitedData)
+//     }
+
+//     getProducts()
+
+//   }, [url])
+// }
+
+// fetchProducts()
