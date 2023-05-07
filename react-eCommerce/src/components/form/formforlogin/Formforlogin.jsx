@@ -1,13 +1,13 @@
-import React from 'react';
-import { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 import './Formforlogin.css';
-import { Form, Link, NavLink } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import Formbtn from './btnlogin/Formbtn';
 
-const Formforlogin = () => {
+const Formforlogin = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,11 +17,12 @@ const Formforlogin = () => {
         password,
       });
       console.log(res.data.token); // log the token
+      setIsLoggedIn(true); // update the login status in the parent component
+      navigate('/shop');
     } catch (error) {
       console.log(error); // handle error
     }
   };
-
 
   return (
     <div className='form-login-wrapper'>
@@ -47,3 +48,4 @@ const Formforlogin = () => {
 };
 
 export default Formforlogin;
+

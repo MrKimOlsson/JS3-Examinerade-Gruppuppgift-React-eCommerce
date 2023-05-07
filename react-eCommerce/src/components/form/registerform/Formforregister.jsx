@@ -4,6 +4,7 @@ import Btnregister from './btnregister/Btnregister'
 import './Formforregister.css'
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 const Formforregister = () => {
 
@@ -15,6 +16,9 @@ const Formforregister = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -40,6 +44,7 @@ const Formforregister = () => {
       });
 
       console.log(response.data);
+      navigate('/shop');
     } catch (error) {
       console.error(error);
     }
