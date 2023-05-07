@@ -36,12 +36,12 @@ exports.getOrders = async (req, res) => {
   try {
     const orders = await Order.find({ userId }).populate('products.productId');
     res.status(200).json({
-      message: 'Orders were fetched successfully',
+      message: 'All your orders are fetched friend!',
       orders: orders
     });
   } catch (err) {
     res.status(500).json({
-      message: 'Something went wrong when fetching the orders',
+      message: 'Something went wrong when fetching the orders friend!',
       err: err.message
     });
   }

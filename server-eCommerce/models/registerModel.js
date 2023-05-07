@@ -84,7 +84,7 @@ exports.getUsers = (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: 'Failed to get list of all users',
+        message: 'Could not get all users',
         err: err.message
       })
     })
