@@ -5,6 +5,7 @@ const Footer = () => {
   return (
       <footer className='footer' >
         <p className='copyrightText'>© 2023 bmarketo.  All right reserved.</p>
+      
       </footer>
     )
 }

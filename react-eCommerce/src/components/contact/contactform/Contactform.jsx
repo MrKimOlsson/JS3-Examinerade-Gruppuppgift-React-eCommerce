@@ -9,35 +9,42 @@ const contactForm = () => {
 
       <div className="contactForm">
         <Form method='POST' className='formParent'>
-        <h4>Write Something</h4>
-        <div className='line'></div>
+        <p className='contactFormHeading'>Write Something</p>
+        <div className='contactFormLine'></div>
           <div className="formWrapper">
-          <div className="formGroup">
-            <label htmlFor="name">Your Name*</label>
-            <input type="text" name='name'/>
-          </div>
-          <div className="formGroup">
-            <label htmlFor="email">Your Email</label>
-            <input type="text" name='email'/>
-          </div>
-          <div className="formGroup">
-            <label htmlFor="number">Phone Number</label>
-            <input type="number" name="number" id="" />
-          </div>
-          <div className="formGroup">
-            <label htmlFor="company">Company (optional)</label>
-            <input type="text" name='company'/>
-          </div>
-          </div>
-          <div className="formGroup wide">
-            <label htmlFor="extra">Someting write*</label>
-            <textarea rows="5" cols="60" type="text" className='wide' />
-      <div className="radiobtn">
-        <input type="radio" name="save" id="" />Save my name, email and website in this browser for the next time i comment.
-      </div>
-          </div>
+            <div className="contactFormGroup">
+              <label htmlFor="name">Your Name*</label>
+              <input type="text" name='name'/>
+            </div>
+            <div className="contactFormGroup">
+              <label htmlFor="email">Your Email</label>
+              <input type="text" name='email'/>
+            </div>
+            <div className="contactFormGroup">
+              <label htmlFor="number">Phone Number</label>
+              <input type="number" name="number" id="" />
+            </div>
+
+            <div className="contactFormGroup">
+              <label htmlFor="company">Company (optional)</label>
+              <input type="text" name='company'/>
+            </div>
+
+            <div className="contactFormGroup">
+              <label htmlFor="extra">Someting write*</label>
+              <textarea rows="5" cols="60" type="text" className='contact-textarea' />
+            </div>
+           </div>
+
+           <div className='contactFormSubmitGroup'>
+            <div className="contactFormRadioButtonGroup">
+              <input type="radio" name="save" id="contactForm-radioBtn" />
+              <p>Save my name, email and website in this browser for the next time i comment.</p>
+            </div>
+             <FormBtn className="contactFormBtn"/>
+
+           </div>
         </Form>
-        <FormBtn />
       </div>
 </div>
 
