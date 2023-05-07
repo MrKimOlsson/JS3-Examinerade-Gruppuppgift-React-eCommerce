@@ -52,17 +52,43 @@ exports.getProductById = (req, res) => {
     })
 }
 
+exports.updateProduct = (req, res) => {
+  const productId = req.params.id
+  const { title, shortDescription, price, category, imageURL, description } = req.body
+
+  if (!title || !shortDescription || !price || !category || !imageURL || !description) {
+    res.status(400).json({
+      message: 'All following inputs must be filled in: title, shortDescription, price, category, imageURL, description'
+    })
+    return
+  }
+
+  Product.findByIdAndUpdate(productId, { title, shortDescription, price, category, imageURL, description })
+    .then(() => {
+      res.status(200).json({
+        message: 'Your product is now updated'
+      })
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: 'Your product was not updated, something went wrong',
+        err: err.message
+      })
+    })
+}
+
+
 
 exports.deleteProduct = (req, res) => {
   Product.findByIdAndDelete(req.params.id)
-  .then(products => {
-    res.status(200).json(products)
-  })
-  .catch(err => {
-    res.status(500).json({
-      message: 'Error when trying to delete that specific product',
-      err: err.message
+    .then(products => {
+      res.status(200).json(products)
     })
-  })
+    .catch(err => {
+      res.status(500).json({
+        message: 'Error when trying to delete that specific product',
+        err: err.message
+      })
+    })
 }
 
