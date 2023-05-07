@@ -8,5 +8,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/product', require('./controllers/productController'));
 app.use('/api/user', require('./controllers/registerController'));
+app.use('/api/order', require('./controllers/orderController'));
+
 
 module.exports = app;
