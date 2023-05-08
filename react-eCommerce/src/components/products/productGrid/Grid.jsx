@@ -2,14 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 import './grid.css'
 import ProductListItem from '../../productListItem.jsx/ProductListItem'
-import { useFetchMore } from "../../../hooks/useFetch"
+import { useFetchAmount } from "../../../hooks/useFetch"
 
 const Grid = () => {
   
+  // Change the amount of products in the grid
   let amount = 8;
+  
   const [url, setUrl] = useState('http://localhost:9999/api/product')
-  const { data: products, loading, error } = useFetchMore(url, { method: 'GET' }, amount)
-  console.log(products)
+  const { data: products, loading, error } = useFetchAmount(url, { method: 'GET' }, amount)
 
   return (
 

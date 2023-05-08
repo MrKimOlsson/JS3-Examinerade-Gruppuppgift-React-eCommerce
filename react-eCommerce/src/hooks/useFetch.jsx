@@ -16,7 +16,7 @@ export const useFetch = (url, options) => {
     const fetchData = async () => {
 
       setLoading(true)
-      // setData(null)
+
       try {
         const res = await fetch(url, {
           ..._options,
@@ -60,14 +60,13 @@ export const useFetch = (url, options) => {
 
 
 
-export const useFetchMore = (url, options, amount) => {
+export const useFetchAmount = (url, options, amount) => {
 
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
   
     const _options = useRef(options)
-    console.log(amount)
   
     useEffect(() => {
   

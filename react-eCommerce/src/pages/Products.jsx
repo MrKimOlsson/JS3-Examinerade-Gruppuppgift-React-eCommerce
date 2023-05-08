@@ -5,8 +5,6 @@ import GridMenu from '../components/products/productGrid/gridMenu/GridMenu'
 import WideHero from '../components/universal/wideHero/WideHero'
 import SpecialOffersWide from '../components/products/specialOffersWide/SpecialOffersWide'
 
-// const [amount, setAmount] = useState([])
-
 function Products() {
   return (
     <>

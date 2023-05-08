@@ -6,7 +6,7 @@ export const newsletterSub = async (subscriberData, setSubscriber) => {
         console.log(subscriberData)
         console.log(setSubscriber)
       
-      const res = await fetch('http://localhost:3000/add-subscriber', {
+      const res = await fetch('http://localhost:9999/add-subscriber', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
