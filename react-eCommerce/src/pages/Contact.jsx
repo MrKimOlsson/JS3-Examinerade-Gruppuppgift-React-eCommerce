@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactForm from '../components/contact/contactform/contactForm'
+import ContactForm from '../components/contact/contactform/ContactForm'
 import WideHero from '../components/universal/wideHero/WideHero'
 import Contactmap from '../components/contact/contactmap/Contactmap'
 

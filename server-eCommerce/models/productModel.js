@@ -37,6 +37,7 @@ exports.getAllProducts = (req, res) => {
     })
 }
 
+
 exports.getProductById = (req, res) => {
 
   Product.findById(req.params.id)
