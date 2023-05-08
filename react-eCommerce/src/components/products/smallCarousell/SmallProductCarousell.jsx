@@ -10,7 +10,7 @@ const smallCarousell = () => {
         <div className='small-carousell-component-container'>
 
         <div className='small-carousell-grid-container'>
-                <div className='small-carousell-product-container'>
+              <div className='small-carousell-product-container'>
 
                 <div className='product-container'>
                     <img src={ProductImage} alt="" />
@@ -31,6 +31,7 @@ const smallCarousell = () => {
                 <div className='product-container'>
                     <img src={ProductImage} alt="" />
                 </div>
+                
             </div>   
         
         </div>

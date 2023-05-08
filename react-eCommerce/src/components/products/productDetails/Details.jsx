@@ -14,12 +14,12 @@ const Details = () => {
       <div className='details-container'>
 
         <div className='img-wrapper'>
-          <img src={BigImg} alt="Product image" srcset="" />
+          <img src={BigImg} alt="Product image" srcSet="" />
           <div className='smallImg-wrapper'>
-            <img src={SmallImg} alt="Product image" srcset="" />
-            <img src={SmallImg} alt="Product image" srcset="" />
-            <img src={SmallImg} alt="Product image" srcset="" />
-            <img src={SmallImg} alt="Product image" srcset="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
           </div>
         </div>
         <div className='text-wrapper'>
