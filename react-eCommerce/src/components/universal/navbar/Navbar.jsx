@@ -1,12 +1,23 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Logo from '../../../logo/logo.svg'
 import './navbar.css'
 import {FiSearch} from 'react-icons/fi'
 import {FaShoppingCart} from 'react-icons/fa'
+import { handleLogin } from '../../form/formforlogin/Formforlogin'
 
 
-const Navbar = () => {
+
+const Navbar = (setIsLoggedIn) => {
+  console.log(setIsLoggedIn)
+
+  const handleLogout = () => {
+
+    setIsLoggedIn(true)
+    const navigate = useNavigate()
+    navigate('/login')
+
+  }
   return (
     <>
       <nav className='navbar'>
@@ -19,11 +30,17 @@ const Navbar = () => {
           <li><NavLink className='nav-link' to='/products'>Products</NavLink></li>
           <li><NavLink className='nav-link' to='/contact'>Contact</NavLink></li>
           <li><FiSearch className='opacity height'/></li>
-          <li><NavLink className='nav-link lowercase opacity' to='/login'>Login</NavLink></li>
+          {/* <li><NavLink className='nav-link lowercase opacity' to='/login'>Login</NavLink></li> */}
+          {setIsLoggedIn ? (
+          <> 
+            <li><NavLink className='nav-link lowercase opacity' to='/userprofile'>user</NavLink></li>
+            <li><NavLink className='nav-link lowercase opacity' to='/login' onClick={handleLogout}>Logout</NavLink></li>
+          </>
+          ) : (<li><NavLink className='nav-link lowercase opacity' to='/login'>Login</NavLink></li> )}
           <li><NavLink className='nav-link ' to='/cart'><FaShoppingCart className='cart'/></NavLink></li>
         </ul>
       </nav>
-    </>
+    </> 
   )
 }
 

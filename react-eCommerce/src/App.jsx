@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Register from './pages/Register'
+import UserProfile from './pages/UserProfile'
 // import getProducts from './helpers/apiService'
 
 
@@ -53,6 +54,10 @@ const App = () => {
         {
           path: 'login',
           element: <Login />
+        },
+        {
+          path: 'userprofile',
+          element: <UserProfile />
         },
         {
           path: 'register',
