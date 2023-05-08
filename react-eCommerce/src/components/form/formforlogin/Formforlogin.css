@@ -1,9 +1,9 @@
 .form-login-wrapper {
   box-sizing: border-box;
   padding-left: 20rem;
-  border: 1px solid black;
   padding-top: 20rem;
   color: rgb(99, 99, 99);
+  margin-bottom: 20rem;
 }
 
 .form-login-container h4 {
@@ -15,15 +15,16 @@
 }
 
 .form-login-container {
-  height: 35vh;
+  height: auto;
   max-width: 90vh;
   box-shadow: .2px .2px 2px darkgrey;
   padding: 1.5rem 2rem;
   margin: 4rem;
   display: flex;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0px 0px 30px 0px #a1a1a118;
 }
 
 .input-group-login {
@@ -48,11 +49,15 @@
   border: 0;
   font-size: 1.5rem;
   padding-left: 10px;
-  background-color: rgb(247, 246, 246);
+  background-color: #fafafa;
 }
 
 .form-label-link-two {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.login-checkbox {
+  margin-top: .5rem;
 }

@@ -84,8 +84,59 @@ exports.getUsers = (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: 'Failed to get list of all users',
+        message: 'Could not get all users',
         err: err.message
       })
     })
 }
+
+exports.updateUser = (req, res) => {
+  const { id } = req.params;
+  const { firstName, lastName, streetName, postalCode, city, email, password } = req.body;
+
+  if (!firstName || !lastName || !streetName || !postalCode || !city || !email || !password) {
+    res.status(400).json({
+      message: 'All following inputs must be filled in: firstName, lastName, streetName, postalCode, city, email, password'
+    });
+    return;
+  }
+
+  bcrypt.hash(password, 10)
+    .then((hashedPassword) => {
+      return Register.findByIdAndUpdate(id, { firstName, lastName, streetName, postalCode, city, email, password: hashedPassword }, { new: true }).select('-confirmPassword');
+    })
+    .then((user) => {
+      res.status(200).json({
+        message: 'Your account has been updated',
+        user
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: 'Your account was not updated, something went wrong',
+        err: err.message
+      });
+    });
+};
+
+exports.deleteUser = (req, res) => {
+  Register.findByIdAndDelete(req.params.id)
+    .then(user => {
+      if (!user) {
+        res.status(404).json({
+          message: 'User not found'
+        });
+        return;
+      }
+
+      res.status(200).json({
+        message: 'User has been deleted'
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: 'Something went wrong',
+        err: err.message
+      });
+    });
+};
