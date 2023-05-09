@@ -27,6 +27,7 @@ const handleSubmit = async (event) => {
     }
   } else {
     alert('Please fill in all required fields');
+    // obs will change, alertboxes below every field thats required to be filled in
   }
 }
   
