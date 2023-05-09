@@ -4,9 +4,10 @@ import './Formforlogin.css';
 import { Form, Link, useNavigate } from 'react-router-dom';
 import Formbtn from './btnlogin/Formbtn';
 
-const Formforlogin = ({ setIsLoggedIn }) => {
+const Formforlogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -16,9 +17,14 @@ const Formforlogin = ({ setIsLoggedIn }) => {
         email,
         password,
       });
+      // const token = res.data.token
       console.log(res.data.token); // log the token
+      localStorage.setItem('token', res.data.token)
+
+      
       setIsLoggedIn(true); // update the login status in the parent component
-      navigate('/shop');
+      console.log(isLoggedIn)
+      navigate('/');
     } catch (error) {
       console.log(error); // handle error
     }
