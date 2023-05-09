@@ -1,96 +1,74 @@
 import React from 'react'
-import { Form, useActionData } from 'react-router-dom'
+// import { useActionData } from 'react-router-dom'
+import { Form } from 'react-router-dom'
 import './contactForm.css'
-import FormBtn from '../formBtn/FormBtn'
-// import { registerErrand } from '../../../helpers/apiService'
 import axios from 'axios';
+import { useState } from 'react'
+import FormBtn from '../formBtn/FormBtn'
 
-const contactForm = () => {
+const ContactFormRegister = () => {
+  const [nameFL,   setNameFL]   = useState('')
+  const [email,    setEmail]    = useState('')
+  const [number,   setNumber]   = useState('')
+  const [company,  setCompany]  = useState('')
+  const [text,     setText]     = useState('')
+  const [checkbox, setcheckbox] = useState('')
 
-// const ContactFormRegister = () => {
-//   const [nameFL, setNameFL]     =   useState('')
-//   const [email, setEmail]       =   useState('')
-//   const [number, setNumber]     =   useState('')
-//   const [company, setCompany]   =   useState('')
-//   const [text, setText]         =   useState('')
-//   const [checkbox, setcheckbox] =   useState('')
-// }
-
-
-
-
-
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  if (nameFL && email && number) {
+    try { 
+      const response = await axios.post('http://localhost:9999/api/contact', {
+        nameFL, email, number, company, text, checkbox 
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    alert('Please fill in all required fields');
+  }
+}
+  
   return (
-  <div className="form">
-
+    <div className="form">
       <div className="contactForm">
-        <Form method='POST' className='formParent'>
+        <Form className='formParent' onSubmit={handleSubmit}>
         <p className='contactFormHeading'>Write Something</p>
         <div className='contactFormLine'></div>
           <div className="formWrapper">
             <div className="contactFormGroup">
               <label htmlFor="nameFL">Your Name*</label>
-              <input type="text" name='nameFL'/>
+              <input type="text" name='nameFL' value={nameFL} onChange={(e) => setNameFL(e.target.value)}/>
             </div>
             <div className="contactFormGroup">
               <label htmlFor="email">Your Email</label>
-              <input type="text" name='email'/>
+              <input type="text" name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="contactFormGroup">
               <label htmlFor="number">Phone Number</label>
-              <input type="number" name="number" id="" />
+              <input type="number" name="number" value={number} onChange={(e) => setNumber(e.target.value)}/>
             </div>
-
             <div className="contactFormGroup">
               <label htmlFor="company">Company (optional)</label>
-              <input type="text" name='company'/>
+              <input type="text" name='company' value={company} onChange={(e) => setCompany(e.target.value)}/>
             </div>
-
             <div className="contactFormGroup">
               <label htmlFor="extra">Someting write*</label>
-              <textarea rows="5" cols="60" type="text" className='contact-textarea' />
+              <textarea rows="5" cols="60" type="text" className='contact-textarea' value={text} onChange={(e) => setText(e.target.value)}/>
             </div>
            </div>
-
            <div className='contactFormSubmitGroup'>
             <div className="contactFormRadioButtonGroup">
-              <input type="radio" name="checkbox" id="contactForm-radioBtn" />
+              <input type="checkbox" name="checkbox" id="contactForm-radioBtn" value={checkbox} onChange={(e) => setcheckbox(e.target.checked)}/>
               <p>Save my name, email and website in this browser for the next time i comment.</p>
             </div>
-             {/* <FormBtn onSubmit={registerFormData} className="contactFormBtn" /> */}
-
+             <FormBtn className="contactFormBtn"/>
            </div>
         </Form>
       </div>
 </div>
-
-  )
+)
 }
 
-
-
-// export const registerFormData = (setData) => async ({ request }) => {
-//   const data = await request.formData()
-//   const formData = {
-//       nameFL:       data.get('nameFL'),
-//       email:        data.get('email'),
-//       number:       data.get('number'), 
-//       company:      data.get('company'),
-//       text:         data.get('text'),
-//       checkbox:     data.get('checkbox')
-//   }
-//   return registerErrand(formData, setData)
-// }
-// const contactFormAnswer = async (e) => {
-//   try {
-//     const res = await axios.post('http://localhost:9999/api/contact', {
-//       nameFL, email, number, company, text, checkbox,
-//     });
-//     // Navigate('/comments')
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
-
-
-export default contactForm
+export default ContactFormRegister
