@@ -17,6 +17,9 @@ import UserProfile from './pages/UserProfile'
 
 const App = () => {
 
+  // const [url, setUrl] = useState('http://localhost:9999/api/product/')
+  // const { data: products, loading, error } = useFetch(url, { method: 'GET' })
+
   // const [products, setProducts] = useState([])
   // const [url, setUrl] = useState('http://localhost:9999/api/product')
 
@@ -70,13 +73,10 @@ const App = () => {
         {
           path: 'products',
           element: <Products />,
-
-          children: [
-            {
-              path: ':id',
-              element: <ProductDetails />,
-            }
-          ]
+        },
+        {
+          path: 'productDetails/:id',
+          element: <ProductDetails />
         },
         {
           path: 'productDetails',
