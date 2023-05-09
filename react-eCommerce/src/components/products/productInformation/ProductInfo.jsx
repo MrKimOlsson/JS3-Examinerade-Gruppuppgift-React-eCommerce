@@ -33,7 +33,7 @@ const ProductInfo = () => {
                 </p>
              </div>
               <div className='product-info-img-container'>
-                <img src={ProductImage} alt="" srcset="" />
+                <img src={ProductImage} alt="" srcSet="" />
               </div>
         </div>
 

@@ -4,22 +4,29 @@ import './details.css'
 import { MdOutlineAddShoppingCart } from 'react-icons/Md'
 import BigImg from '../../../images/501x430.svg'
 import SmallImg from '../../../images/120x113.svg'
+// import product from '../../../pages/ProductDetails'
+// import { getProduct } from '../../../pages/ProductDetails'
+// import { getProductByID } from '../../../pages/ProductDetails'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
 
 
 const Details = () => {
+  
   return (
-
+    
     <div className='details-wrapper'>
 
       <div className='details-container'>
 
         <div className='img-wrapper'>
-          <img src={BigImg} alt="Product image" srcset="" />
+          <img src={BigImg} alt="Product image" srcSet="" />
           <div className='smallImg-wrapper'>
-            <img src={SmallImg} alt="Product image" srcset="" />
-            <img src={SmallImg} alt="Product image" srcset="" />
-            <img src={SmallImg} alt="Product image" srcset="" />
-            <img src={SmallImg} alt="Product image" srcset="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img src={SmallImg} alt="Product image" srcSet="" />
           </div>
         </div>
         <div className='text-wrapper'>
