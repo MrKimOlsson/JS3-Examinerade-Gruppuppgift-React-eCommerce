@@ -9,14 +9,16 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Register from './pages/Register'
+import { useState } from 'react'
 
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <RootLayout />,
+      element: <RootLayout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
       errorElement: <Error />,
       children: [
         {
@@ -29,7 +31,7 @@ const App = () => {
         },
         {
           path: 'login',
-          element: <Login />
+          element: <Login setIsLoggedIn={setIsLoggedIn} />
         },
         {
           path: 'register',

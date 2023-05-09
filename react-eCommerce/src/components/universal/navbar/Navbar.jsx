@@ -1,12 +1,18 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import Logo from '../../../logo/logo.svg'
-import './navbar.css'
-import {FiSearch} from 'react-icons/fi'
-import {FaShoppingCart} from 'react-icons/fa'
+import React, { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import Logo from '../../../logo/logo.svg';
+import './navbar.css';
+import { FiSearch } from 'react-icons/fi';
+import { FaShoppingCart } from 'react-icons/fa';
 
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
 
-const Navbar = () => {
+  const handleLogout = () => {
+    setIsLoggedIn(false); // set isLoggedIn to false on logout
+    navigate('/login');
+  };
+
   return (
     <>
       <nav className='navbar'>
@@ -16,17 +22,26 @@ const Navbar = () => {
         <ul>
           <li><NavLink className='nav-link' to='/'>Home</NavLink></li>
           <li><NavLink className='nav-link' to='/productDetails'>Details</NavLink></li>
-          <li><NavLink className='nav-link' to='/shop'>Products</NavLink></li>
+          <li><NavLink className='nav-link' to='/products'>Products</NavLink></li>
           <li><NavLink className='nav-link' to='/contact'>Contact</NavLink></li>
-          <li><FiSearch className='opacity height'/></li>
-          <li><NavLink className='nav-link lowercase opacity' to='/login'>Login</NavLink></li>
-          <li><NavLink className='nav-link ' to='/cart'><FaShoppingCart className='cart'/></NavLink></li>
+          <li><FiSearch className='opacity height' /></li>
+          {isLoggedIn ? ( // show the logout button if the user is logged in
+            <>
+              <li><NavLink className='nav-link lowercase opacity' to='/userprofile'>user</NavLink></li>
+              <li><NavLink className='nav-link lowercase opacity' to='/login' onClick={handleLogout}>Logout</NavLink></li>
+            </>
+          ) : ( // show the login button if the user is logged out
+            <>
+              <li><NavLink className='nav-link lowercase opacity' to='/login'>Login</NavLink></li>
+            </>
+          )}
+          <li><NavLink className='nav-link ' to='/cart'><FaShoppingCart className='cart' /></NavLink></li>
         </ul>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
 
 
