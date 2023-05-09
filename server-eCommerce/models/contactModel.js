@@ -1,6 +1,6 @@
 const Register = require('../schemas/contactSchema')
 
-exports.contact = (req, res) => {
+exports.addcontact = (req, res) => {
     const { nameFL, email, number, company, text, checkbox } = req.body;
     
     if (!nameFL || !email || !number) {
