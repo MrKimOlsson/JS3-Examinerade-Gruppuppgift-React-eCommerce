@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Register from './pages/Register'
+import ForgotPassword from './pages/ForgotPassword'
 // import getProducts from './helpers/apiService'
 
 
@@ -77,6 +78,10 @@ const App = () => {
           path: 'productDetails',
           element: <ProductDetails />
         },
+        {
+          path: 'forgotpassword',
+          element: <ForgotPassword />
+        }
 
       ]
     }
