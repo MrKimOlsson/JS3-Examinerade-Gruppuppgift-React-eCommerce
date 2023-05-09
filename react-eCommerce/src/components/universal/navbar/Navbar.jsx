@@ -4,7 +4,6 @@ import Logo from '../../../logo/logo.svg'
 import './navbar.css'
 import {FiSearch} from 'react-icons/fi'
 import {FaShoppingCart} from 'react-icons/fa'
-import { handleLogin } from '../../form/formforlogin/Formforlogin'
 
 
 

@@ -12,12 +12,7 @@ function Cart() {
           <p className='ci-p'>Shipped by Bmarkedo</p>
           <CartItems />
           <CartItems />
-          <CartItems />
-          <CartItems />
-          <CartItems />
-          <CartItems />
-          <CartItems />
-          <CartItems />
+
         </div>
         <TotalSum />
       </div>
