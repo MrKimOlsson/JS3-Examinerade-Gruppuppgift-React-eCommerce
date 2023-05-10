@@ -17,6 +17,7 @@ const ContactFormRegister = () => {
 const handleSubmit = async (event) => {
   event.preventDefault();
   if (nameFL && email && number) {
+    
     try { 
       const response = await axios.post('http://localhost:9999/api/contact', {
         nameFL, email, number, company, text, checkbox 
@@ -30,7 +31,7 @@ const handleSubmit = async (event) => {
     // obs will change, alertboxes below every field thats required to be filled in
   }
 }
-  
+
   return (
     <div className="form">
       <div className="contactForm">

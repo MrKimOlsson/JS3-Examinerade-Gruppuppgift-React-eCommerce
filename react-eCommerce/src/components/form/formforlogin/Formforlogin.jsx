@@ -18,7 +18,7 @@ const Formforlogin = ({ setIsLoggedIn }) => {
       });
       console.log(res.data.token); // log the token
       setIsLoggedIn(true); // update the login status in the parent component
-      navigate('/shop');
+      navigate('/products');
     } catch (error) {
       console.log(error); // handle error
     }

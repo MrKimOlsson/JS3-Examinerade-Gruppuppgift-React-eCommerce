@@ -10,5 +10,6 @@ app.use('/api/product', require('./controllers/productController'));
 app.use('/api/user', require('./controllers/registerController'));
 app.use('/api/order', require('./controllers/orderController'));
 app.use('/api/contact', require('./controllers/contactController'))
+app.use('/api/subscriber', require('./controllers/subscriberController'))
 
 module.exports = app;
