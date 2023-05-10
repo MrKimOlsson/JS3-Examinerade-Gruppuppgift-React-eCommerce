@@ -53,7 +53,7 @@ const NewsletterSub = () => {
         <div className='subscribeForm'>
             <div>
                 <Form onSubmit={handleSubmit}>
-                    <input type="text" name='email' id='subEmail' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type="text" name='email' id='subscribeEmailInput' value={email} onChange={(e) => setEmail(e.target.value)}/>
                     <button className='btn-subscribe'>SUBSCIRIBE FOR NEWSLETTER</button>
                 </Form>
             </div>
