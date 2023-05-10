@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-.subscribeEmailInput {
+#subscribeEmailInput {
     border: 1px solid #aaa;
     border-radius: 2rem 0rem 0rem 2rem;
     padding: 1rem;
