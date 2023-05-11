@@ -1,6 +1,7 @@
 import React from 'react'
 import CartItems from '../components/cart/cartItems/CartItems'
 import TotalSum from '../components/cart/totalSum/TotalSum'
+import NewsletterSub from '../components/home/newsletter/NewsletterSub'
 
 function Cart() {
   return (
@@ -11,10 +12,11 @@ function Cart() {
           <p className='ci-p'>Shipped by Bmarkedo</p>
           <CartItems />
           <CartItems />
+
         </div>
         <TotalSum />
       </div>
-      
+      <NewsletterSub />
     </>
   )
 }

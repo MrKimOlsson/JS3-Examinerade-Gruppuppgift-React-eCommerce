@@ -11,6 +11,9 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Register from './pages/Register'
+import ForgotPassword from './pages/ForgotPassword'
+import UserProfile from './pages/UserProfile'
+// import getProducts from './helpers/apiService'
 
 
 const App = () => {
@@ -58,6 +61,10 @@ const App = () => {
           element: <Login setIsLoggedIn={setIsLoggedIn} />
         },
         {
+          path: 'userprofile',
+          element: <UserProfile />
+        },
+        {
           path: 'register',
           element: <Register />
         },
@@ -77,6 +84,10 @@ const App = () => {
           path: 'productDetails',
           element: <ProductDetails />
         },
+        {
+          path: 'forgotpassword',
+          element: <ForgotPassword />
+        }
 
       ]
     }

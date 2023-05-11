@@ -1,20 +1,16 @@
 import { useEffect, useState, useRef } from "react"
 
-
 export const useFetch = (url, options) => {
 
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-
   const _options = useRef(options)
 
   useEffect(() => {
 
     const controller = new AbortController()
-
     const fetchData = async () => {
-
       setLoading(true)
 
       try {
@@ -44,7 +40,6 @@ export const useFetch = (url, options) => {
           setLoading(false)
         }
       }
-
     }
     fetchData()
 
@@ -54,11 +49,8 @@ export const useFetch = (url, options) => {
 
   }, [url, _options])
 
-
   return { data, loading, error }
 }
-
-
 
 
 export const useFetchAmount = (url, options, amount) => {
@@ -66,13 +58,10 @@ export const useFetchAmount = (url, options, amount) => {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
-  
     const _options = useRef(options)
   
     useEffect(() => {
-  
       const controller = new AbortController()
-  
       const fetchData = async () => {
   
         setLoading(true)

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import Logo from '../../../logo/logo.svg';
-import './navbar.css';
-import { FiSearch } from 'react-icons/fi';
-import { FaShoppingCart } from 'react-icons/fa';
+import React from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import Logo from '../../../logo/logo.svg'
+import './navbar.css'
+import {FiSearch} from 'react-icons/fi'
+import {FaShoppingCart} from 'react-icons/fa'
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();

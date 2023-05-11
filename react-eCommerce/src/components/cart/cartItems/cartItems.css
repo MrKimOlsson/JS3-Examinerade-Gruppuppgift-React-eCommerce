@@ -4,6 +4,8 @@
     margin: auto;
     padding: 1.5rem;
     display: flex;
+    margin-bottom: 1.5rem;
+    
 }
 
 .cartItem-wrapper {
