@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { addUser, getUsers, updateUser, userLogin, deleteUser } = require('../models/registerModel')
+const { addUser, getUsers, updateUser, userLogin, deleteUser, getUserById } = require('../models/registerModel')
 const verify = require('../authenticator/auth')
 
 
@@ -11,6 +11,7 @@ router.post('/login', userLogin)
 
 //READ
 router.get('/', getUsers)
+router.get('/:id', getUserById)
 
 //UPDATE
 router.put('/:id', updateUser)

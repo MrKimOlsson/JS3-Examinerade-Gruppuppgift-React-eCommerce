@@ -40,6 +40,19 @@ exports.addUser = (req, res) => {
     });
 };
 
+exports.getUserById = (req, res) => {
+  Register.findById(req.params.id)
+    .then(user => {
+      res.status(200).json(user)
+    })
+    .catch(err => {
+      res.status(404).json({
+        message: 'Something went wrong when fetching the user',
+        err: err.message
+      })
+    })
+}
+
 exports.userLogin = (req, res) => {
   const { email, password } = req.body;
 
