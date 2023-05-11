@@ -10,6 +10,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const handleLogout = () => {
     setIsLoggedIn(false); // set isLoggedIn to false on logout
+    localStorage.removeItem('token')
+    console.log(localStorage.getItem('token')); // should log "null"
     navigate('/login');
   };
 

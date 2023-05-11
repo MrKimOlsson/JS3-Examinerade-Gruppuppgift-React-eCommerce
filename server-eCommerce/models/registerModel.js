@@ -120,7 +120,9 @@ exports.updateUser = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
-  Register.findByIdAndDelete(req.params.id)
+  const userId = req.userInfo._id;
+
+  Register.findByIdAndDelete(userId)
     .then(user => {
       if (!user) {
         res.status(404).json({

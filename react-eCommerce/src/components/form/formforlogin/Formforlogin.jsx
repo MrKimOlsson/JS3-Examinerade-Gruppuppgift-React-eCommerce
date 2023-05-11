@@ -16,13 +16,15 @@ const Formforlogin = ({ handleLogin }) => {
         email,
         password,
       });
-      localStorage.setItem('token', res.data.token);
+      localStorage.removeItem('token'); // remove any existing token
+      localStorage.setItem('token', res.data.token); // set new token
       handleLogin(); // update isLoggedIn state
       navigate('/');
     } catch (error) {
       console.log(error); // handle error
     }
   };
+
 
   return (
     <div className='form-login-wrapper'>

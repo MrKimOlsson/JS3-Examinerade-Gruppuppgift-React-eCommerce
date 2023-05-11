@@ -11,7 +11,6 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Register from './pages/Register'
-import { useState } from 'react'
 
 
 const App = () => {
