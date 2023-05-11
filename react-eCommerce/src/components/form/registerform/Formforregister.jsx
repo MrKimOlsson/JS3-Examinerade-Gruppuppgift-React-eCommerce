@@ -44,7 +44,7 @@ const Formforregister = () => {
       });
 
       console.log(response.data);
-      navigate('/shop');
+      navigate('/');
     } catch (error) {
       console.error(error);
     }

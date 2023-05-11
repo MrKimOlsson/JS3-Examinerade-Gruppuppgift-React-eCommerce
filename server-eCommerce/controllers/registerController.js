@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const { addUser, getUsers, updateUser, userLogin, deleteUser } = require('../models/registerModel')
-const { deleteMany } = require('../schemas/productSchema')
+const verify = require('../authenticator/auth')
+
 
 
 
@@ -15,6 +16,6 @@ router.get('/', getUsers)
 router.put('/:id', updateUser)
 
 //DELETE
-router.delete('/:id', deleteUser)
+router.delete('/', verify.verifyToken, deleteUser)
 
 module.exports = router;

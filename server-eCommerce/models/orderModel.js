@@ -46,3 +46,24 @@ exports.getOrders = async (req, res) => {
     });
   }
 };
+
+
+exports.deleteOrder = async (req, res) => {
+  const userId = req.userInfo._id;
+
+  try {
+    const deletedOrders = await Order.deleteMany({ userId });
+    res.status(200).json({
+      message: 'All your orders were successfully deleted',
+      orders: deletedOrders
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: 'Something went wrong when deleting the orders',
+      err: err.message
+    });
+  }
+};
+
+
+

@@ -17,6 +17,7 @@ import UserProfile from './pages/UserProfile'
 
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   // const [url, setUrl] = useState('http://localhost:9999/api/product/')
   // const { data: products, loading, error } = useFetch(url, { method: 'GET' })
@@ -44,7 +45,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <RootLayout />,
+      element: <RootLayout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
       errorElement: <Error />,
       children: [
         {
@@ -57,7 +58,7 @@ const App = () => {
         },
         {
           path: 'login',
-          element: <Login />
+          element: <Login setIsLoggedIn={setIsLoggedIn} />
         },
         {
           path: 'userprofile',

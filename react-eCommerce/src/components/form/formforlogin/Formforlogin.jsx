@@ -4,36 +4,33 @@ import './Formforlogin.css';
 import { Form, Link, useNavigate } from 'react-router-dom';
 import Formbtn from './btnlogin/Formbtn';
 
-const Formforlogin = () => {
+const Formforlogin = ({ handleLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const submitLogin = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:9999/api/user/login', {
         email,
         password,
       });
-      // const token = res.data.token
-      console.log(res.data.token); // log the token
-      localStorage.setItem('token', res.data.token)
-
-      
-      setIsLoggedIn(true); // update the login status in the parent component
-      console.log(isLoggedIn)
+      localStorage.removeItem('token'); // remove any existing token
+      localStorage.setItem('token', res.data.token); // set new token
+      handleLogin(); // update isLoggedIn state
       navigate('/');
     } catch (error) {
       console.log(error); // handle error
     }
   };
 
+
   return (
     <div className='form-login-wrapper'>
       <div className="form-login-container">
-        <Form onSubmit={handleLogin}>
+        <Form onSubmit={submitLogin}>
           <h4>Please Login to Your Account</h4>
           <div className="input-group-login d-flex-form">
             <label className='form-label-link' htmlFor="email">E-mail* <Link className='form-link-register-padding' to='/register'>Don't have an Account yet?</Link></label>
@@ -46,7 +43,7 @@ const Formforlogin = () => {
           <div>
             <input className='login-checkbox' type="checkbox" name="" id="" />
           </div>
-          <Formbtn onSubmit={handleLogin} />
+          <Formbtn />
         </Form>
       </div>
     </div>
