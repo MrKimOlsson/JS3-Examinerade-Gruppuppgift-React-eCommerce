@@ -8,6 +8,30 @@
     gap: .44rem;
 }
 
+.largeProductImgContainer {
+    width: 501px;
+    height: 430px;
+    overflow: hidden;
+    margin-bottom: .4rem;
+}
+
+.largeProductImg {
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  
+
+}
+
+.smallProductImg {
+    width: 120px;
+    height: 113px;
+    object-fit: cover;
+
+}
+
 .details-container {
     display: flex;
     justify-content: left;
