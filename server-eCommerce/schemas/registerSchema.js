@@ -7,9 +7,12 @@ const registerSchema = mongoose.Schema({
   streetName: { type: String, required: true },
   postalCode: { type: Number, required: true },
   city: { type: String, required: true },
+  mobile: { type: Number, required: false },
+  company: { type: String, required: false },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   passwordConfirm: { type: String },
+  profilePic: { type: Buffer, required: false } // Add file field
 }, { timestamps: true });
 
 
