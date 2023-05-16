@@ -82,7 +82,7 @@ exports.userLogin = (req, res) => {
           });
         }
         const token = auth.createJwt(user);
-        return res.status(200).json({ token });
+        return res.status(200).json(user);
       });
     })
     ;
