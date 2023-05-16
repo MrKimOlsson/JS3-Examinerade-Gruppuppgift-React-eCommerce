@@ -30,6 +30,43 @@ exports.addOrder = async (req, res) => {
 };
 
 
+exports.updateOrder = async (req, res) => {
+  const orderId = req.params.id;
+  const userId = req.userInfo._id;
+  const products = req.body.products;
+
+  if (!products) {
+    return res.status(400).json({ message: 'You need to enter all fields' });
+  }
+
+  const orderProducts = products.map(product => ({
+    productId: product.productId,
+    quantity: product.quantity
+  }));
+
+  try {
+    const order = await Order.findByIdAndUpdate(
+      orderId,
+      { userId: userId, products: orderProducts },
+      { new: true }
+    );
+
+    if (!order) {
+      return res.status(404).json({ message: 'Order not found' });
+    }
+
+    res.status(200).json({
+      message: 'Order was updated',
+      order: order
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: 'Something went wrong when updating the order',
+      error: err.message
+    });
+  }
+};
+
 exports.getOrders = async (req, res) => {
   const userId = req.userInfo._id;
 
@@ -46,6 +83,9 @@ exports.getOrders = async (req, res) => {
     });
   }
 };
+
+
+
 
 
 exports.deleteOrder = async (req, res) => {
