@@ -19,6 +19,14 @@ import UserProfile from './pages/UserProfile'
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('user')
+    if(loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser)
+      setIsLoggedIn(true)
+    }
+  }, [])
+
   // const [url, setUrl] = useState('http://localhost:9999/api/product/')
   // const { data: products, loading, error } = useFetch(url, { method: 'GET' })
 

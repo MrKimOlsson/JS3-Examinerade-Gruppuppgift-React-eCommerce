@@ -18,7 +18,9 @@ const Formforlogin = ({ handleLogin }) => {
         password,
       });
       localStorage.removeItem('token'); // remove any existing token
-      localStorage.setItem('token', res.data.token); // set new token
+      // localStorage.setItem('token', res.data.token); // set new token
+      localStorage.setItem('user', JSON.stringify(res.data))
+      console.log(res.data)
       handleLogin(); // update isLoggedIn state
       navigate('/');
     } catch (error) {
