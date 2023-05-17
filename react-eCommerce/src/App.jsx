@@ -13,6 +13,7 @@ import Cart from './pages/Cart'
 import Register from './pages/Register'
 import ForgotPassword from './pages/ForgotPassword'
 import UserProfile from './pages/UserProfile'
+import EditProfile from './components/userProfile/editProfile/EditProfile'
 // import getProducts from './helpers/apiService'
 
 
@@ -70,7 +71,11 @@ const App = () => {
         },
         {
           path: 'userprofile',
-          element: <UserProfile />
+          element: <UserProfile />,
+        },
+        {
+          path: 'edit-profile',
+          element: <EditProfile />
         },
         {
           path: 'register',
