@@ -2,7 +2,7 @@ import React from 'react'
 import { Form } from 'react-router-dom'
 import Btnregister from './btnregister/Btnregister'
 import './Formforregister.css'
-import { useState } from 'react'
+import { useState, ChangeEvent } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 
@@ -16,8 +16,14 @@ const Formforregister = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [profilePic, setprofilePic] = useState('')
 
   const navigate = useNavigate();
+
+  const handleProfilePicChange = (event) => {
+    setprofilePic(event.target.files[0]);
+  };
+
 
 
   const handleSubmit = async (event) => {
@@ -31,7 +37,8 @@ const Formforregister = () => {
         city,
         email,
         password,
-        passwordConfirm
+        passwordConfirm,
+        profilePic
       });
 
       console.log('New user:', {
@@ -104,7 +111,9 @@ const Formforregister = () => {
           </div>
           <div className='top-section-register-full padding-between'>
             <label htmlFor="streetname">Upload Profil (optional)</label>
-            <input className="whole-register-input" type="text" name="" id="" />
+            <input type="file"
+              id="profilePic" name="profilePic"
+              accept="image/png, image/jpeg" value={profilePic} onChange={handleProfilePicChange} />
           </div>
           <div className='section-terms'>
             <input type="checkbox" name="" id="" />
