@@ -1,45 +1,63 @@
 import React from 'react'
 import ProductInfoMenu from './productInfoMenu/ProductInfoMenu'
 import './productInfo.css'
-import ProductImage from '../../../images/469x356.svg'
+// import ProductImage from '../../../images/469x356.svg'
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+// import Product from '../../product/Product'
+import { clearProduct, getProductById } from '../../../features/products/singleProductSlice'
+
 
 const ProductInfo = () => {
+
+  const dispatch = useDispatch()
+  const { id } = useParams()
+
+  useEffect(() => {
+    dispatch(getProductById(id))
+
+    return () => {
+      dispatch(clearProduct())
+    }
+
+  }, [])
+
+  const { product, loading, error } = useSelector(state => state.singleProduct)
+
+  if(error) {
+    return (
+      <div>
+        <h2>{error}</h2>
+      </div>
+    )
+  }
+
+
   return (
-    
+    <>
+    { loading && <p>Loading...</p> }
+     { product &&
     <div className='product-info-component-wrapper'>
         <ProductInfoMenu />
         <div className='product-info-title-container'>
 
-          <h3 className='product-info-title'>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</h3>
+          <h3 className='product-info-title'>{product.title}</h3>
         </div>
         <div className='product-info-container'>
             <div className='product-info-text'>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor <br />
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et <br />
-                ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.<br />
-                <br />
-                accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, <br />
-                adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti <br />
-                unde?<br />
-                <br />
-                Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, <br />
-                rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae <br />
-                aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus.<br />
-                <br />
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor <br />
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et <br />
-                cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem 
-                ipsum dolor sit amet. Lorem ipsum dolor.
+                <p>{product.description}
                 </p>
              </div>
               <div className='product-info-img-container'>
-                <img src={ProductImage} alt="" srcSet="" />
+                <img src={product.imageURL[0]} alt="" srcSet="" />
               </div>
         </div>
 
 
 
-    </div>
+    </div>}
+     </>
   )
 }
 
