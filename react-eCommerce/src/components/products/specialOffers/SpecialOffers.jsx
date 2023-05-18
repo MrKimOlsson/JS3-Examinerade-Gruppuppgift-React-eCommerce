@@ -2,17 +2,56 @@ import React from 'react'
 import './specialOffers.css'
 import SpecialOffersImage from '../../../images/369x310.svg'
 import { MdOutlineAddShoppingCart } from 'react-icons/Md'
+import { useEffect, useState } from 'react'
+// import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { clearProduct, getProductById } from '../../../features/products/singleProductSlice'
 
-const SpecialOffers = () => {
+const SpecialOffers = ({ products }) => {
+
+//     let id = '6457647e222f0c52a46addcc'
+
+    // let productOne = products[4]
+    // let productTwo = products[6]
+    
+//   const dispatch = useDispatch()
+// //   const { id } = useParams()
+
+//   useEffect(() => {
+//     dispatch(getProductById(id))
+
+//     return () => {
+//       dispatch(clearProduct())
+//     }
+
+//   }, [])
+
+//   const { productOne, loading, error } = useSelector(state => state.singleProduct)
+
+//   if(error) {
+//     return (
+//       <div>
+//         <h2>{error}</h2>
+//       </div>
+//     )
+//   }
+
+
   return (
+    <>
+    {/* { loading && <p>Loading...</p> }
+     { productOne && */}
+    
     <div className='specialOffers-container'>
         <div className='specialOffers-card'>
+
             <img className='specialOffers-image' src={SpecialOffersImage} alt="product image" />
             <div className='specialOffer-text'>
-                <p className='specialOffer-title'>Table Lamp - scelerisque tempore</p>
+                <p className='specialOffer-title'></p>
                 <div className='specialOffer-price'><p><span>$50.00</span></p> <p>$30.00</p><div></div> <MdOutlineAddShoppingCart /></div>
             </div>
         </div>
+        {/* {console.log(product.title)} */}
 
         <div className='specialOffers-card'>
             <div className='specialOffer-saletext'>
@@ -34,6 +73,7 @@ const SpecialOffers = () => {
         
         
     </div>
+    </>
   )
 }
 

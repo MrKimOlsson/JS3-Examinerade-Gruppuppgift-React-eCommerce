@@ -29,3 +29,9 @@
     width: 40rem;
     /* text-overflow:clip; */
 }
+
+.product-info-img-container img{
+    width: 501px;
+    height: 430px;
+    object-fit: cover;
+}

@@ -2,35 +2,63 @@ import React from 'react'
 import { AiFillStar } from 'react-icons/Ai'
 import './details.css'
 import { MdOutlineAddShoppingCart } from 'react-icons/Md'
-import BigImg from '../../../images/501x430.svg'
-import SmallImg from '../../../images/120x113.svg'
+// import BigImg from '../../../images/501x430.svg'
+// import SmallImg from '../../../images/120x113.svg'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import Product from '../../product/Product'
+import { clearProduct, getProductById } from '../../../features/products/singleProductSlice'
 
 
 
 const Details = () => {
 
-  
+  const dispatch = useDispatch()
+  const { id } = useParams()
+
+  useEffect(() => {
+    dispatch(getProductById(id))
+
+    return () => {
+      dispatch(clearProduct())
+    }
+
+  }, [])
+
+  const { product, loading, error } = useSelector(state => state.singleProduct)
+
+  if(error) {
+    return (
+      <div>
+        <h2>{error}</h2>
+      </div>
+    )
+  }
   
   return (
+    <>
+    { loading && <p>Loading...</p> }
+     { product &&
     
     <div className='details-wrapper'>
 
       <div className='details-container'>
 
         <div className='img-wrapper'>
-          <img src={BigImg} alt="Product image" srcSet="" />
+          <div className='largeProductImgContainer'>
+          <img className='largeProductImg'  src={product.imageURL[0]} alt="Product image" srcSet="" />
+          </div>
           <div className='smallImg-wrapper'>
-            <img src={SmallImg} alt="Product image" srcSet="" />
-            <img src={SmallImg} alt="Product image" srcSet="" />
-            <img src={SmallImg} alt="Product image" srcSet="" />
-            <img src={SmallImg} alt="Product image" srcSet="" />
+            <img className='smallProductImg' src={product.imageURL[1]} alt="Product image" srcSet="" />
+            <img className='smallProductImg' src={product.imageURL[2]} alt="Product image" srcSet="" />
+            <img className='smallProductImg' src={product.imageURL[3]} alt="Product image" srcSet="" />
+            <img className='smallProductImg' src={product.imageURL[4]} alt="Product image" srcSet="" />
           </div>
         </div>
         <div className='text-wrapper'>
-          <h3>Young Star Smart Shoe in Fashion</h3>
-          <p>Lirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam <br />voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita <br />kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <h3>{product.title}</h3>
+          <p>{product.description}</p>
           <div className='detailsLine'></div>
           <div className='reviews'>
             <div className='reviewStars'>
@@ -45,7 +73,7 @@ const Details = () => {
             </div>
           </div>
           <p className='productDetailsPrice'>$30</p>
-
+          {console.log(product)}
           <div className='addToCart'>
             <div className='productDetailsButtonWrapper'>
               <button>-</button>
@@ -67,11 +95,12 @@ const Details = () => {
           </div>
 
             <button className='wishlistBtn'>Add to wishlist</button>
-            <p className='productDetailsCategory'>Category: Table Lamp, Light</p>
+            <p className='productDetailsCategory'>Category: {product.category}</p>
           </div>
         
       </div>
-    </div>
+    </div>}
+    </>
   )
 }
 

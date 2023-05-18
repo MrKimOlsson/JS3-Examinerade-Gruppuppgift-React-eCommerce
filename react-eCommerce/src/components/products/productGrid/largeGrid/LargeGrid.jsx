@@ -1,29 +1,19 @@
 import React from 'react'
-import { useState } from 'react'
 import '../grid.css'
+import Product from '../../../product/Product'
 
-import ProductListItem from '../../../productListItem/ProductListItem'
-import { useFetchAmount } from '../../../../hooks/useFetch'
-
-const LargeGrid = () => {
+const LargeGrid = ({ products }) => {
   
-  // Change the amount of products in the grid
-  let amount = 16;
-  
-  const [url, setUrl] = useState('http://localhost:9999/api/product')
-  const { data: products, loading, error } = useFetchAmount(url, { method: 'GET' }, amount)
-
   return (
 
     <div className='grid-component'>
         <div className='grid-container'>
 
-        { loading && <p>Loading...</p> }
-        { error && <p>{error}</p> }
-
-        { products && !loading && !error && products.map(product => (
-          <ProductListItem key={product._id} product={product} />
-        ))}
+          {
+            products.length > 0
+            ? products.map(product => <Product key={product._id} product={product} />)
+            : <h2>No products to show</h2>
+          }
         
       </div>
     </div>

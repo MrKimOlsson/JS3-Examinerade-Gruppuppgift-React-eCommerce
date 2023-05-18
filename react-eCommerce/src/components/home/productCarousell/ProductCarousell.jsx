@@ -3,7 +3,7 @@ import './productCarousell.css';
 import CarousellHeading from './carousellHeading/CarousellHeading';
 import Carousell from './carousell/Carousell';
 
-const ProductCarousell = () => {
+const ProductCarousell = ({ products }) => {
   
   const carousellRef = useRef(null);
   
@@ -39,7 +39,7 @@ const ProductCarousell = () => {
     <div className='productCarousell-wrapper'>
       <CarousellHeading />
       <div className='productCarousell-container'>
-        <Carousell ref={carousellRef} />
+      <Carousell key={products._id} products={products} ref={carousellRef} />
       </div>
       <div className="btn-center">
         <div className='adminPostBtn'>
