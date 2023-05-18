@@ -67,6 +67,27 @@ const App = () => {
   //         <h2>{error}</h2>
   //       </div>
   //     )
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('user')
+    if(loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser)
+      setIsLoggedIn(true)
+    }
+  }, [])
+
+  // const [url, setUrl] = useState('http://localhost:9999/api/product/')
+  // const { data: products, loading, error } = useFetch(url, { method: 'GET' })
+
+  // const [products, setProducts] = useState([])
+  // const [url, setUrl] = useState('http://localhost:9999/api/product')
+
+  // useEffect(() => {
+
+  //   const getProducts = async () => {
+  //     const res = await axios.get(url)
+  //     console.log(res.data)
+  //     console.log(products)
+  //     setProducts(res.data)
   //   }
     
   // }

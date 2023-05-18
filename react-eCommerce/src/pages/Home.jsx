@@ -43,7 +43,13 @@ const Home = ({ products }) => {
       }
       <GridButton />
       <SpecialOffers />
-      <ProductCarousell />
+      {/* <ProductCarousell /> */}
+      { 
+        products.length > 0
+        // ? <ProductCarousell key={products.id} products={products} />
+        ? <ProductCarousell key={products._id} products={products} />
+        : <h2>No products to show</h2>
+      }
       <AdminPost />
       <NewsletterSub />
       

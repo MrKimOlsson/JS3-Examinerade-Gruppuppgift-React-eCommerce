@@ -6,7 +6,7 @@ import Post from './posts/Post'
 const AdminPost = () => {
   return (
     <div className='adminPost'>
-      <Button/>
+      {/* <Button/> */}
       <Post/>
     </div>
   )

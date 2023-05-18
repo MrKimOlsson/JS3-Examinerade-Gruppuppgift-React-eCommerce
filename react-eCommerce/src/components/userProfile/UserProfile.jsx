@@ -3,31 +3,37 @@ import { BiUserCircle } from 'react-icons/bi'
 import { NavLink } from 'react-router-dom'
 import { CiEdit } from 'react-icons/ci'
 import './userProfile.css'
+import Formforlogin from '../form/formforlogin/Formforlogin'
 
 function UserProfile() {
+
+
+    const user = localStorage.getItem('user')
+    const userInfo = JSON.parse(user)
+
   return (
     <div className='up-container'>
         <div className="up-inner-container">
             <div className='up-icon-container'><BiUserCircle className='up-user-icon'/></div>
             <div className="up-user-info">
                 <div className="up-user-detail">
-                    <p>Felix Edström</p>
+                    <p>{userInfo && userInfo.firstName}</p>
                     <div><CiEdit className="up-edit"/></div>
                 </div>
                 <div className="up-user-detail">
-                    <p>Skyllbergsgatan 1</p>
+                    <p>{userInfo && userInfo.streetName}</p>
                     <div><CiEdit className="up-edit"/></div>
                 </div>
                 <div className="up-user-detail">
-                    <p>124 71</p>
+                    <p>{userInfo && userInfo.postalCode}</p>
                     <div><CiEdit className="up-edit"/></div>
                 </div>
                 <div className="up-user-detail">
-                    <p>Stockholm</p>
+                    <p>{userInfo && userInfo.city}</p>
                     <div><CiEdit className="up-edit"/></div>
                 </div>
                 <div className="up-user-detail">
-                    <p>felix@mail.com</p>
+                    <p>{userInfo && userInfo.email}</p>
                     <div><CiEdit className="up-edit"/></div>
                 </div>
                 <div className="up-user-detail">
