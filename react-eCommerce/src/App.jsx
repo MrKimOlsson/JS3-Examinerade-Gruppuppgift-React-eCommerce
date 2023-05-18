@@ -24,7 +24,6 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
-  // ______________________________________________________________________
 
   const dispatch = useDispatch()
   const { products, error, loading } = useSelector(state => state.products)
@@ -39,7 +38,6 @@ const App = () => {
   { error && <p>{error}</p> }
 
 
-  // _____________________________________________________________________
   
   // const dispatchProductByID = () => {
   //   // const { id } = useParams()
@@ -94,8 +92,6 @@ const App = () => {
     
   // }
   // dispatchProductByID()
-     // _____________________________________________________________________
-  
 
 
 
