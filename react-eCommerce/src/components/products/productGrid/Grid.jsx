@@ -9,25 +9,15 @@ import { useEffect } from 'react'
 import { getAllProducts } from '../../../features/products/productsSlice'
 
 
-const Grid = () => {
+const Grid = ({ products }) => {
   
-  const dispatch = useDispatch()
-  const { products, error, loading } = useSelector(state => state.products)
-
-
-  useEffect(() => {
-    dispatch(getAllProducts())
-  }, [])
-
-  
-
   return (
 
     <div className='grid-component'>
         <div className='grid-container'>
 
-            { loading && <p>Loading...</p> }
-            { error && <p>{error}</p> }
+            {/* { loading && <p>Loading...</p> }
+            { error && <p>{error}</p> } */}
 
             {
             products.length > 0
