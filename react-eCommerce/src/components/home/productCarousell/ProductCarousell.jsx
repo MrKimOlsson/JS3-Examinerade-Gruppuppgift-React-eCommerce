@@ -11,21 +11,23 @@ const ProductCarousell = ({ products }) => {
   const handleRightScroll = () => {
     const carousel = carousellRef.current;
     if (carousel) {
-      carousel.scrollBy({ left: 200, behavior: 'smooth' });
+      carousel.scrollBy({ left: window.innerWidth * 0.5, behavior: 'smooth' });
     }
   };
   // scroll left
   const handleLeftScroll = () => {
     const carousel = carousellRef.current;
     if (carousel) {
-      carousel.scrollBy({ left: -200, behavior: 'smooth' })
+      carousel.scrollBy({ left: window.innerWidth * -0.5, behavior: 'smooth' })
     }
   };
-  // autoscroll, improvment needed
+  // autoscroll
   const handleAutoScroll = () => {
     const carousel = carousellRef.current;
     if (carousel) {
-      carousel.scrollBy({ left: 1, behavior: 'smooth' })
+      carousel.scrollBy({ left: window.innerWidth * 0.1, behavior: 'smooth' })
+    } else {
+
     }
   }
   useEffect(() => {
@@ -34,6 +36,13 @@ const ProductCarousell = ({ products }) => {
       clearInterval(intervalId);
     };
   }, []);
+
+  // Behöver lösa pausfunktionalitet
+  //   const handlePause = () => {
+  //     const carousel = carousellRef.current;
+  //     carousel.scrollBy({ left: 1, behavior: 'smooth' })
+  // }
+
   
   return (
     <div className='productCarousell-wrapper'>
@@ -47,6 +56,11 @@ const ProductCarousell = ({ products }) => {
         </div>
         <div className='adminPostBtn'>
           <button onClick={handleRightScroll}>&gt;</button>
+        </div>
+        <div className='adminPostBtn'>
+          <button id="pause-symbol" 
+          // onClick={handlePause}
+          >&ge;</button>
         </div>
       </div>
     </div>
