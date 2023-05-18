@@ -5,7 +5,8 @@
     align-items: center;
     text-align: center;
     gap: 2rem;
-    margin: 0rem 4rem 0rem 4rem;
+    /* margin: 0rem 4rem 0rem 4rem; */
+    overflow-x: hidden;
 }
 
 .carousellProduct {
@@ -21,7 +22,10 @@
 .caousellTitle, span {
     color: #aaa;
 }
-
+.carousellimg {
+    height: 270px;
+    width: 295px;
+}
 .carousellText {
     display: flex;
     flex-direction: column;
