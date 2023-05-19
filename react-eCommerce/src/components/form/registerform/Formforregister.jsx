@@ -2,7 +2,7 @@ import React from 'react'
 import { Form } from 'react-router-dom'
 import Btnregister from './btnregister/Btnregister'
 import './Formforregister.css'
-import { useState, ChangeEvent } from 'react'
+import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 

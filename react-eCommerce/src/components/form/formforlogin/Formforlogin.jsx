@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Formforlogin.css';
 import { Form, Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken } from '../../../app/action';
 import Formbtn from './btnlogin/Formbtn';
 
 const Formforlogin = ({ handleLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // Access the token from Redux store
+  const token = useSelector(state => state.auth.token);
 
   const submitLogin = async (e) => {
     e.preventDefault();
@@ -17,16 +22,19 @@ const Formforlogin = ({ handleLogin }) => {
         email,
         password,
       });
-      localStorage.removeItem('token'); // remove any existing token
-      // localStorage.setItem('token', res.data.token); // set new token
-      localStorage.setItem('user', JSON.stringify(res.data))
-      console.log(res.data)
-      handleLogin(); // update isLoggedIn state
+      const { user, token } = res.data; // Destructure the user and token from the response
+      localStorage.setItem('user', JSON.stringify(user));
+      dispatch(setToken(token));
+      handleLogin();
+      console.log('Logged in user:', user);
       navigate('/');
     } catch (error) {
-      console.log(error); // handle error
+      console.log(error);
     }
   };
+
+
+  console.log('Token from Redux:', token);
 
 
   return (
