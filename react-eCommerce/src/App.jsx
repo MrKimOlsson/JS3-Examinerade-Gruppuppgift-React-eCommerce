@@ -15,6 +15,7 @@ import Cart from './pages/Cart'
 import Register from './pages/Register'
 import ForgotPassword from './pages/ForgotPassword'
 import UserProfile from './pages/UserProfile'
+import Userorders from './pages/Userorders'
 import EditProfile from './components/userProfile/editProfile/EditProfile'
 // import getProducts from './helpers/apiService'
 
@@ -33,7 +34,7 @@ const App = () => {
     dispatch(getAllProducts())
   }, [])
 
-  
+
   { loading && <p>Loading...</p> }
   { error && <p>{error}</p> }
 
@@ -44,23 +45,23 @@ const App = () => {
   //   let id = '6457647e222f0c52a46addcc'
 
   //   const dispatch = useDispatch()
-  
-    
+
+
   //   useEffect(() => {
   //     dispatch(getProductById(id))
-  
+
   //     return () => {
   //       dispatch(clearProduct())
   //       product
   //     }
-  
+
   //   }, [])
 
 
 
-    
+
   //   const { product, loading, error } = useSelector(state => state.singleProduct)
-    
+
   //   if(error) {
   //     return (
   //       <div>
@@ -69,7 +70,7 @@ const App = () => {
   //     )
   useEffect(() => {
     const loggedInUser = localStorage.getItem('user')
-    if(loggedInUser) {
+    if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser)
       setIsLoggedIn(true)
     }
@@ -89,7 +90,7 @@ const App = () => {
   //     console.log(products)
   //     setProducts(res.data)
   //   }
-    
+
   // }
   // dispatchProductByID()
 
@@ -103,12 +104,12 @@ const App = () => {
       children: [
         {
           index: true,
-          element: <>{ 
+          element: <>{
             products.length > 0
-                ? <Home key={products.id} products={products}/>
-                : <h2>No products to show</h2>
-              }</>
-          
+              ? <Home key={products.id} products={products} />
+              : <h2>No products to show</h2>
+          }</>
+
         },
         {
           path: 'contact',
@@ -127,6 +128,10 @@ const App = () => {
           element: <EditProfile />
         },
         {
+          path: 'userhistory',
+          element: <Userorders />
+        },
+        {
           path: 'register',
           element: <Register />
         },
@@ -136,11 +141,11 @@ const App = () => {
         },
         {
           path: 'products',
-          element: <>{ 
+          element: <>{
             products.length > 0
-                ? <Products key={products.id} products={products} />
-                : <h2>No products to show</h2>
-              }</>
+              ? <Products key={products.id} products={products} />
+              : <h2>No products to show</h2>
+          }</>
         },
         {
           path: 'productDetails/:id',
