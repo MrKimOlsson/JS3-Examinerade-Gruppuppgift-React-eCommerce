@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Formforlogin.css';
 import { Form, Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken } from '../../../app/action';
+import { setToken, setUser } from '../../../app/action';
 import Formbtn from './btnlogin/Formbtn';
 
 const Formforlogin = ({ handleLogin }) => {
@@ -12,7 +12,6 @@ const Formforlogin = ({ handleLogin }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Access the token from Redux store
   const token = useSelector(state => state.auth.token);
 
   const submitLogin = async (e) => {
@@ -22,8 +21,9 @@ const Formforlogin = ({ handleLogin }) => {
         email,
         password,
       });
-      const { user, token } = res.data; // Destructure the user and token from the response
+      const { user, token } = res.data; 
       localStorage.setItem('user', JSON.stringify(user));
+      dispatch(setUser(user));
       dispatch(setToken(token));
       handleLogin();
       console.log('Logged in user:', user);
@@ -35,7 +35,6 @@ const Formforlogin = ({ handleLogin }) => {
 
 
   console.log('Token from Redux:', token);
-
 
   return (
     <div className='form-login-wrapper'>

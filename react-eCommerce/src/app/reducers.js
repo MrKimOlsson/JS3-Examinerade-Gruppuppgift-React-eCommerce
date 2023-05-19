@@ -1,7 +1,6 @@
-
-
 const initialState = {
   token: null,
+  user: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -11,11 +10,16 @@ const authReducer = (state = initialState, action) => {
         ...state,
         token: action.payload,
       };
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.payload,
+      };
     default:
       return state;
   }
 };
 
-
 export default authReducer;
+
 
