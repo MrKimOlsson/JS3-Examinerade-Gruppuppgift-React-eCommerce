@@ -16,6 +16,8 @@ import Register from './pages/Register'
 import ForgotPassword from './pages/ForgotPassword'
 import UserProfile from './pages/UserProfile'
 import Userorders from './pages/Userorders'
+import EditProfile from './components/userProfile/editProfile/EditProfile'
+// import getProducts from './helpers/apiService'
 
 
 
@@ -23,7 +25,6 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
-  // ______________________________________________________________________
 
   const dispatch = useDispatch()
   const { products, error, loading } = useSelector(state => state.products)
@@ -38,8 +39,7 @@ const App = () => {
   { error && <p>{error}</p> }
 
 
-  // _____________________________________________________________________
-
+  
   // const dispatchProductByID = () => {
   //   // const { id } = useParams()
   //   let id = '6457647e222f0c52a46addcc'
@@ -93,8 +93,6 @@ const App = () => {
 
   // }
   // dispatchProductByID()
-  // _____________________________________________________________________
-
 
 
 
@@ -123,7 +121,11 @@ const App = () => {
         },
         {
           path: 'userprofile',
-          element: <UserProfile />
+          element: <UserProfile />,
+        },
+        {
+          path: 'edit-profile',
+          element: <EditProfile />
         },
         {
           path: 'userhistory',

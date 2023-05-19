@@ -15,6 +15,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     navigate('/login');
   };
 
+  const user = localStorage.getItem('user')
+  const userInfo = JSON.parse(user)
+
   return (
     <>
       <nav className='navbar'>
@@ -28,7 +31,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           <li><FiSearch className='opacity height' /></li>
           {isLoggedIn ? ( // show the logout button if the user is logged in
             <>
-              <li><NavLink className='nav-link lowercase opacity' to='/userprofile'>user</NavLink></li>
+              <li><NavLink className='nav-link lowercase user-name' to='/userprofile'>{userInfo && userInfo.firstName}</NavLink></li>
               <li><NavLink className='nav-link lowercase opacity' to='/login' onClick={handleLogout}>Logout</NavLink></li>
             </>
           ) : ( // show the login button if the user is logged out

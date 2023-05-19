@@ -48,3 +48,12 @@
     font-size: .8rem;
     opacity: .3;
 }
+
+.user-name {
+    background-color: rgba(250, 49, 79, 0.814);
+    padding: .3em 1em;
+    color: black !important;
+    opacity: 1 !important;
+    border-radius: .4em;
+    font-size: .8rem !important;
+}
