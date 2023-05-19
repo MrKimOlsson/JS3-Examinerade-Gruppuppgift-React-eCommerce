@@ -82,8 +82,9 @@ exports.userLogin = (req, res) => {
           });
         }
         const token = auth.createJwt(user);
-        return res.status(200).json(user);
+        return res.status(200).json({ user, token });
       });
+
     })
     ;
 };
